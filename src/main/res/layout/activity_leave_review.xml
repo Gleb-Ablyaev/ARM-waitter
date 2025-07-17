@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".LeaveReviewActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Оставить отзыв"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выберите заказ для отзыва:"
+        android:textSize="16sp"/>
+
+    <Spinner
+        android:id="@+id/spinnerSelectOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Контейнер для формы отзыва, изначально скрыт -->
+    <LinearLayout
+        android:id="@+id/layoutReviewFormContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"> <!-- Изначально скрыто -->
+
+        <TextView
+            android:id="@+id/textViewSelectedOrderInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Отзыв для заказа: #"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/editTextReviewerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ваше имя (для отзыва)"
+            android:inputType="textPersonName|textCapWords"
+            android:minHeight="48dp"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ваша оценка:"
+            android:textSize="16sp"/>
+
+        <Spinner
+            android:id="@+id/spinnerRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/editTextReviewComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:hint="Текст вашего отзыва..."
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/buttonSubmitReview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Отправить отзыв"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewReviewResponse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/textViewLoadingOrders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Загрузка списка заказов..."
+        android:gravity="center"
+        android:visibility="gone"/>
+
+</LinearLayout>
